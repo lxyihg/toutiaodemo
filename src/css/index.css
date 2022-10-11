@@ -1,0 +1,27 @@
+body {
+  background-color: #f5f7f9;
+}
+.page-nav-bar {
+  background-color: #3296fa;
+}
+.page-nav-bar .van-nav-bar__title {
+  color: #fff;
+}
+.login-container .toutiao {
+  font-size: 37px;
+}
+.login-container .send-sms-btn {
+  width: 152px;
+  height: 46px;
+  line-height: 46px;
+  background-color: #ededed;
+  font-size: 22px;
+  color: #666;
+}
+.login-container .login-btn-wrap {
+  padding: 53px 33px;
+}
+.login-container .login-btn-wrap .login-btn {
+  background-color: #6db4fb;
+  border: none;
+}
