@@ -26,14 +26,22 @@
       >
         <i slot="left-icon" class="toutiao toutiao-yanzhengma"></i>
         <template #button>
+          <van-count-down
+            v-if="isCountDownShow"
+            :time="1000 * 10"
+            format="ss s"
+            @finish="isCountDownShow = false"
+          />
+
           <van-button
+            v-else
             class="send-sms-btn"
             round
             size="small"
             type="default"
             native-type="button"
-            >发送验证码</van-button
-          >
+            @click="onSendSms"
+            >发送验证码</van-button>
         </template>
       </van-field>
       <div class="login-btn-wrap">
@@ -75,13 +83,15 @@ export default {
     },
 
    async onSendSms() {
-      console.log("onsendsms");
+      console.log("onsendSms");
       try{
         await this.$refs.loginForm.validate('mobile')
         console.log('验证通过');
       }catch(err){
-       return console.log('验证失败',err);
-      }
+        console.log('验证失败',err);
+      } 
+
+      this.isCountDownShow =true
     },
   },
   data() {
@@ -113,6 +123,8 @@ export default {
           },
         ],
       },
+
+      isCountDownShow : false
     };
   },
 };
